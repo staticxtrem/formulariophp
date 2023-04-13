@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario con fecha y hora en tiempo real</title>
+</head>
+<body>
+  <h1>Formulario con fecha y hora en tiempo real</h1>
+  <form method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre"><br><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" id="apellido"><br><br>
+    <input type="submit" name="submit" value="Enviar">
+  </form>
+
+  <?php
+  if (isset($_POST['submit'])) {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $fecha = date("Y-m-d H:i:s");
+    echo "<h2>Datos copiados:</h2>";
+    echo "<p>Nombre: $nombre</p>";
+    echo "<p>Apellido: $apellido</p>";
+    echo "<p>Fecha y hora: $fecha</p>";
+  }
+  ?>
+</body>
+</html>
